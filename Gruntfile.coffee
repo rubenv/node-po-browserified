@@ -2,7 +2,7 @@ module.exports = (grunt) ->
     @loadNpmTasks('grunt-browserify')
     @loadNpmTasks('grunt-contrib-clean')
     @loadNpmTasks('grunt-contrib-uglify')
-    @loadNpmTasks('grunt-release')
+    @loadNpmTasks('grunt-bump')
 
     @initConfig
         clean:
@@ -20,6 +20,11 @@ module.exports = (grunt) ->
                 files:
                     'dist/node-po.min.js': 'dist/node-po.js'
 
+        bump:
+            options:
+                files: ['package.json', 'bower.json']
+                commitFiles: ['-a']
+
     @registerTask 'default', ['build']
     @registerTask 'build', ['clean', 'browserify', 'uglify']
-    @registerTask 'package', ['build', 'release']
+    @registerTask 'package', ['build', 'bump']
