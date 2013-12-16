@@ -1,6 +1,6 @@
 {
   "name": "node-po-browserified",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Browserified version of node-po.",
   "main": "dist/node-po.js",
   "scripts": {
